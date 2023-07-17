@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="af6cdb7f-cbdf-40d3-9b21-4ae486946a21" namespace="XpoDataModelExample.Module.BusinessObjects.NewDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAMVW207jMBB9X2n/oeozbuI4sR2UBkG5CC2LEJfVvk7sCc2SJlWctOXv1+kNWmCX1VbwOGfO1HPsM+lEB7NR3plgZbKy6Hdpz+0exF+/REdg8KYuK7jH8yItO5ZVmP2Z0f3usK7H+44znU57U9Yrq3vHc13q/Px+caOGOILumpz9nUyywtRQKOzaUzud6BaSHE175DxeIc+AFXQJI4xPRuO8fESMnCdsTTspWiyuq8bml8E6eZyZFrgba6gxTiE3lrQJrrlnTabPdayAUxRSESVBER+VIqFKOQkFUhV6WifS/saSvC4elHkzKsyGgjdhm2g1LJLxaVaZuo0j5xm6wf6Txn/V+Vwr5cg8DzjxgWniC1+QkAfYCmYBBIxqTF9oteXOf8i9gM9S67si5VyERDGaEF97LknCxCMBlZgwHfI0FbtWe5RV9VDD48erTVwacggkASUC4vsBJRIxIdJV0qUuRS7er/Y1dDmN757iWzAPHzLBkmoWytQ+LPienWAAElIlSBBoJlz0lPC8nU7wTZP8QlV//Bsz4EEqUkZEIlPiSwkEpEito10OIVJIUe3a0cdoVJWNa/tP8gmCBaeeYGCtzCjxORVE+la1fdrQpZBwzsNdCz40JrsvUN+WH68XFUUESkkYUN8+sBcQyRJGOFMBBxUK+9Xa6RAv4ydK1O4HqK+qUs3BjrOAfyyWCWuHyclsXKExvWOooTfxWI/udZbpfhv1WM/d6wyavG4q7BfY1BXke52rJskz9Q0fb8sHLPqJlJqKwNfCddEPIXJWR8zPG+RgDJr2Aa6b9e1Gh9q2hmk2W/a1gG6adAO6xlE5wW3iAt3mDuxOFN8VagjFPWp7Z228uJrXeojszYyxqrNP7u2NNqIzLLCy9hqUoxEWtVl69AW8QbYz3lq+Os2sFbYqNnPzsmPMsUY7J6XKoP0wrGpeScwLLps8b212hEOYZGVlXZSC9YcdsO2M3VKdrTU1/g3R9E5UzwoAAA==" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="23.1.3.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="23.1.3.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="36775674-5c11-4a4a-b177-5bf9105196bf">
+      <xpObject Id="ca61e78c-c8ac-4ecc-9cf6-97e1c92ddb8e" name="Employee" baseClass="XPObject" userFileName="Employee" designerFileName="Employee.Designer" className="Employee" virtualName="Employee">
+        <fields>
+          <generalXpObjectHasFields Id="a384100b-10db-478b-9bab-3ba10fbadfb8">
+            <field Id="16e322a6-4a3d-4747-965e-9cf35a531def" name="FirstName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4a6407c4-8ae1-4d2e-b251-a418785d64da">
+            <field Id="407f6679-c31b-4d20-b9b2-518eb3d96ff7" name="LastName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="ab6d434f-9d18-4575-8a1a-266a0cdf132d">
+            <field Id="b0196a58-ac75-4451-8eeb-80c80101e677" name="Birthday" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3d3d2036-e115-462e-913e-d701e315d655">
+            <persistentAlias Id="d1aa2a2f-a46a-43ab-b2ec-0cc5cabc2f01" name="FullName" virtualColumnType="String" expression="[FirstName] + '' + [LastName]" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="3a0e8b8a-5462-42d7-91f5-b497a0fd3d54" sourceCollectionName="Tasks" name="TaskReferencesEmployee" targetFieldName="AssignedTo">
+            <xpObjectMoniker Id="81d398f2-5a42-4eaa-91c7-55d370e2c722" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="65047206-537b-4afc-88fe-ee6c54260529">
+            <collectionField Id="712fb06b-086c-420e-b5b1-12be02404886" name="Tasks" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a58b251d-6903-446f-a87d-943cc1107d6a">
+      <xpObject Id="81d398f2-5a42-4eaa-91c7-55d370e2c722" name="Task" baseClass="XPObject" userFileName="Task" designerFileName="Task.Designer" className="Task" virtualName="Task">
+        <fields>
+          <generalXpObjectHasFields Id="c72526e2-f00c-4471-b51d-628280f08008">
+            <field Id="3a65f7f3-7b8f-488a-a87f-5106a9e1afec" name="Subject" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="804b7693-2fa4-4ae3-9524-2a805a7d13f0">
+            <field Id="3761273a-8e31-4617-848a-55d901ab6669" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="8b348f07-489e-4f94-bd18-36d3c7ceeb3a">
+            <field Id="ec1eea11-9514-4825-83b3-63c56ac97d96" name="AssignedTo" virtualColumnType="Employee" logicalType="Employee" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>
